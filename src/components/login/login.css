@@ -1,0 +1,57 @@
+.container-login{
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.form-login{
+    display: flex;
+    flex-direction: column;
+    background-image: url('../../assets/montanias.webp');
+    border-radius: 5px;
+    box-shadow: 10px 2px 20px rgba(22, 22, 22, 0.5);
+    background-size: cover;
+    background-repeat: no-repeat;
+    width: 100%;
+    margin: 0;
+    width: 26rem;
+    height: 36rem;
+    justify-content: center;
+    padding: 10px;
+    gap: 14px;
+    align-items: center;
+}
+.form-login input{
+    background: white;
+    border-radius: 20px;
+    border: none;
+    width: 18rem;
+    height: 2rem;
+}
+input:focus{
+    outline: none;
+}
+input::placeholder{
+    color: black;
+    display: flex;
+    text-align: center;
+}
+.form-login button{
+    background-color: rgb(255, 255, 255);
+    border: none;
+    border-radius: 20px;
+    width: 6rem;
+    height: 2rem;
+    color: rgb(53, 53, 53);
+    margin-top: 2rem;
+    cursor: pointer;
+    font-size: 20px
+}
+.form-login p{
+    margin: 0;
+}
+.link-sign-up{
+    color: rgb(255, 136, 0);
+    font-size: 18px;
+    cursor: pointer;
+}
