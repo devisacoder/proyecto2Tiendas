@@ -1,0 +1,25 @@
+.container-search{
+    border: 1px solid gray;
+    background-color: aliceblue;
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    width: 14rem;
+}
+.input-search{
+    width: 100%;
+    height: 28px;
+    border: none;
+    background-color: transparent;
+}
+.button-input{
+    height: 28px;
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+}
+.input-search:focus{
+    border: none;
+    outline: none;
+}
+
