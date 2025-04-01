@@ -1,15 +1,14 @@
 // import { BrowserRouter as Router, Routes, Route, Navigate } from 'react-router-dom'
 // import { lazy } from 'react'
-import './App.css'
-import { SidebarCategories } from './components/sidebarCategories/sidebarCategories';
-// import { PageLogin } from './pages/PageLogin'
+import { Home } from './pages/home/home';
 // import { Suspense } from 'react'
+// import { PageLogin } from './pages/pageLogin/PageLogin.jsx'
 
 // import { SignUp } from './components/singUp/SignUp';
 
 function App() {
   return (
-    <SidebarCategories/>
+    <Home/>
     // <Router>
     //   <Routes>
     //     <Route path="/" element={<Navigate to="/Login" />} />

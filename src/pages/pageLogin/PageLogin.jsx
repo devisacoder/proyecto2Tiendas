@@ -3,6 +3,9 @@ import './PageLogin.css'
 
 export const PageLogin = () => {
     return(
-        <Login/>
+        <div className="body">
+
+            <Login/>
+        </div>
     )
 }

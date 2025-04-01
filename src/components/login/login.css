@@ -4,16 +4,15 @@
     align-items: center;
     justify-content: center;
 }
-.form-login{
+.form-login {
     display: flex;
     flex-direction: column;
     background-image: url('../../assets/montanias.webp');
     border-radius: 5px;
     box-shadow: 10px 2px 20px rgba(22, 22, 22, 0.5);
     background-size: cover;
-    background-repeat: no-repeat;
-    width: 100%;
-    margin: 0;
+    background-repeat: no-repeat; 
+    background-position: center; 
     width: 26rem;
     height: 36rem;
     justify-content: center;
@@ -21,6 +20,7 @@
     gap: 14px;
     align-items: center;
 }
+
 .form-login input{
     background: white;
     border-radius: 20px;
