@@ -2,3 +2,25 @@
     width: 3rem;
     cursor: pointer;
 }
+.container-loug-out ul{
+    margin: 0;
+    padding: 0;
+    z-index: 10000;
+    background-color: aliceblue;
+    color: black;
+    justify-content: space-around;
+    align-items: center;
+    width: 6rem;
+    height: 4rem;
+    display: flex;
+    position: absolute;
+    border-radius: 8px;
+    list-style: none;    
+    box-shadow: 0px 4px 10px rgba(255, 255, 255, 0.2); 
+}
+.link-logn-out{
+    cursor: pointer;
+}
+.link-logn-out:hover{
+    border-bottom: 1px solid black;
+}
