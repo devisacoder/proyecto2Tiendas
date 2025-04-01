@@ -1,0 +1,4 @@
+.containerHome {
+    display: flex;
+    padding-left: 20rem; /* Igual al ancho del sidebar + margen */
+}

@@ -8,6 +8,9 @@
     align-items: center;
     justify-content: space-around;
     color: white; 
+    height: 5rem;
+    position: fixed;
+    z-index: 10000;
 }
 
 .container-header h2{

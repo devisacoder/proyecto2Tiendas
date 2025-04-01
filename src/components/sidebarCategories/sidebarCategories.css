@@ -1,12 +1,15 @@
-.container-sidebar{
+.container-sidebar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 20rem;
+    height: 100vh;
+     padding-top: 5%;
+    background-color: #1a426d;
+    color: white;
     display: flex;
     flex-direction: column;
-    height:100vh;
-    width: 18rem;
-    background-color: #1a426d;
-    color: rgb(255, 255, 255);
-    gap: 10px;
-
+    gap: 2rem;
 }
 .title-sidebar{
     display: flex;
@@ -30,7 +33,7 @@
     display: flex;
     width: 100%;
     align-items: center;
-    padding-left: 12%; 
+    padding-left: 16%; 
     box-sizing: border-box;
     cursor: pointer;
 }
