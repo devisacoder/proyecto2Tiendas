@@ -1,0 +1,35 @@
+.container-sidebar{
+    display: flex;
+    flex-direction: column;
+    height:100vh;
+    width: 18rem;
+    background-color: rgb(209, 209, 209);
+    color: rgb(32, 32, 32);
+
+}
+.title-sidebar{
+    display: flex;
+    justify-content: center;
+}
+.ul-sidebar{
+    display: flex;
+    flex-direction: column;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+
+}
+.ul-sidebar li {
+    margin: 0;
+    height: 3rem;
+    display: flex;
+    width: 100%;
+    align-items: center;
+    padding-left: 10px; 
+    box-sizing: border-box;
+    cursor: pointer;
+}
+
+.ul-sidebar li:hover{
+    background-color: rgb(180, 180, 180);
+}
