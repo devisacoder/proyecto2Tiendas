@@ -11,7 +11,6 @@ export const useLogin = () => {
     })
 
     const [ error, setError ] = useState('')
-    const navigate = useNavigate()
     const { login } = useContext(AuthContext)
 
     const handleInputChange = (e) => {
@@ -24,7 +23,7 @@ export const useLogin = () => {
     const handleSubmit = async (e) => {
         e.preventDefault()
         setError('')
-        
+         
         try{
             const response  = await fetch('http://localhost:3001/auth/login', {
                 method: 'POST',

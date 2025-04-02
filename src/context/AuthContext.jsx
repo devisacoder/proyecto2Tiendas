@@ -7,9 +7,7 @@ export const AuthContext = createContext();
 
 export const AuthProvider = ({ children }) => {
     const [ tenant, setTenant ] = useState(null);
-
-
-
+    const [loading, setLoading] = useState(true);
     const navigate = useNavigate();
 
     useEffect(() => {
@@ -24,13 +22,14 @@ export const AuthProvider = ({ children }) => {
                 logout();
             }
         }
+        setLoading(false)
     }, [])
 
     const login = (token) => {
-        console.log('Login ejecutado');
         sessionStorage.setItem('token', token);
+
         const decoded = jwtDecode(token);
-        console.log('Token decodificado:', decoded);
+        
         setTenant(decoded.tenantid);
         navigate('/home');
     };
@@ -39,6 +38,10 @@ export const AuthProvider = ({ children }) => {
         sessionStorage.removeItem('token');
         setTenant(null);
         navigate('/login');
+    }
+
+    if (loading) {
+        return <div className="loading-screen">Cargando...</div>;
     }
 
     return (
