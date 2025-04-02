@@ -1,4 +1,4 @@
-const API = '../../public/productsSlider.json';
+const API = 'http://localhost:8080/products';
 
 export const getProducts = async () => {
     try {

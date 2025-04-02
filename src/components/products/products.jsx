@@ -13,7 +13,7 @@ export const Products = () => {
                         className="containerItemProduct"
                         key={products.id}
                     >
-                        <img className="image-products" src={products.image} alt={products.name}/>
+                        <img className="image-products" src={products.images[0]} alt={products.name}/>
                         <h3 className="name-products">{products.name}</h3>
                         <p className="description-product">{products.description}</p>
                         <p className="price-products">

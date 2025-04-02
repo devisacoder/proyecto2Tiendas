@@ -18,7 +18,7 @@ export const SignUp = () => {
                 <button>SIGN UP</button>
 
                 <p>Ya tienes cuenta?</p>
-                <Link className='link-sign-up' to='/LogIn'>Already have an account?</Link>
+                <Link className='link-sign-up' to='/logIn'>Already have an account?</Link>
             </form>
         </div>
     )
