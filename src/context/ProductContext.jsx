@@ -15,7 +15,6 @@ export const ProviderContext = ({ children }) => {
         setProducts(data)
     }
 
-    
     const formatearPrecio = (precio) => {
         return new Intl.NumberFormat("es-CL", {
             style: "currency",

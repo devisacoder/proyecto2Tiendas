@@ -31,7 +31,14 @@
     width: 16rem;
     cursor: pointer;
 }
+.fullLink {
+    text-decoration: none;
+    color: inherit;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 
+}
 .containerItemProduct:hover {
     background-color: #c643371f; 
 }
