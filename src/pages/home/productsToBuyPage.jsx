@@ -1,15 +1,15 @@
 import { Header } from "../../components/header/header"
-import { Products } from "../../components/products/products"
+import { ProductsToBuy } from "../../components/productsToBuy/productsToBuy"
 import { SidebarCategories } from "../../components/sidebarCategories/sidebarCategories"
-import './home.css'
+import './ProductsToBuyPage.css'
 
-export const Home = () => {
+export const ProductsToBuyPage = () => {
     return(
         <>
             <Header/>
             <div className="containerHome">
                 <SidebarCategories />
-                <Products />
+                <ProductsToBuy />
             </div>
         </>
     )

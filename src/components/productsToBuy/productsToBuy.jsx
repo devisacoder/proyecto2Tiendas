@@ -1,10 +1,10 @@
 import { useContext } from "react"
 import { ProductContext } from "../../context/ProductContext"
-import './products.css'
+import './productsToBuy.css'
 import { Link } from "react-router-dom"
 import addCartIcon from "../../assets/addCartIcon.svg"
 
-export const Products = () => {
+export const ProductsToBuy = () => {
     const { products, formatearPrecio, addToCart, cart } = useContext(ProductContext)
 
     return (
