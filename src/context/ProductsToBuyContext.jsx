@@ -31,7 +31,7 @@ export const ProductsToBuyProvider = ({ children }) => {
                 product.category.some(
                     cat => cat.trim() === selectedCategory.productsToBuy
                 )
-            ) 
+        ) 
         : products;
 
 
