@@ -6,8 +6,10 @@ import { CategoryContext } from "./Categories"
 export const ProductsToBuyContext = createContext()
 
 export const ProductsToBuyProvider = ({ children }) => {
+    const[ search, setSearch ] = useState("")
     const [ products, setProducts ] = useState([])
     const { selectedCategory } = useContext(CategoryContext)
+
 
     useEffect(() => {
         fetchProducts()
@@ -25,21 +27,26 @@ export const ProductsToBuyProvider = ({ children }) => {
             currency: "CLP",
         }).format(precio);
     }
-
-    const filteredProducts = selectedCategory.productsToBuy 
-        ?  products.filter(product => 
-                product.category.some(
-                    cat => cat.trim() === selectedCategory.productsToBuy
+    const filteredProducts = products.filter((product) => {
+        const matchesCategory = selectedCategory?.productsToBuy 
+            ?   product.category.some(
+                    cat => cat.trim().toLowerCase() === selectedCategory.productsToBuy.toLowerCase()
                 )
-        ) 
-        : products;
+            : true;
+
+            const matchesSearch = product.name?.toLowerCase().includes(search?.toLowerCase())
+    
+            return matchesCategory && matchesSearch;
+        })
 
 
     return(
         <ProductsToBuyContext.Provider value={{
             products,
             formatearPrecio,
-            filteredProducts
+            filteredProducts,
+            setSearch,
+            search
         }}>
             {children}
         </ProductsToBuyContext.Provider>

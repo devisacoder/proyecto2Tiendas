@@ -9,7 +9,6 @@ export const ProductsToBuy = () => {
     const { filteredProducts, formatearPrecio } = useContext(ProductsToBuyContext)
     const { cart, addToCart } = useContext(CartContext)
 
-    console.log(filteredProducts)
     return (
         <div className="containerProducts">
             <h1 className="title-products">Products</h1>
