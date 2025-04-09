@@ -2,10 +2,12 @@ import { useContext } from "react"
 import { AuthContext } from "../context/AuthContext"
 import { useEffect } from "react"
 import { useState } from "react"
+import { CategoryContext } from "../context/Categories"
 
 export const useMyProducts = () => {
     const { tenant } = useContext(AuthContext)
     const [ myProducts, setMyProducts ] = useState([])
+    const { selectedCategory } = useContext(CategoryContext)
 
     useEffect(() => {
         if(tenant) {
@@ -33,5 +35,14 @@ export const useMyProducts = () => {
         }
     }
     
-    return { myProducts }
+
+    const filteredProducts = selectedCategory.myProducts
+        ?   myProducts.filter(product => 
+                product.category.some(
+                    cat => cat.trim() === selectedCategory.myProducts
+                )
+            )
+        : myProducts;
+
+    return { myProducts, filteredProducts }
 }

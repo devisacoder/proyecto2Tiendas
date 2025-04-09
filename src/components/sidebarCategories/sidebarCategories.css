@@ -1,8 +1,7 @@
 .container-sidebar {
-
     width: 20rem;
     height: 100vh;
-     padding-top: 5%;
+    padding-top: 5%;
     background-color: #1a426d;
     color: white;
     display: flex;
@@ -38,5 +37,6 @@
 
 .ul-sidebar li:hover{
     background-color: #247fac;
-    color: black;
+    color: rgb(255, 255, 255);
+    transition: 0.3s;
 }

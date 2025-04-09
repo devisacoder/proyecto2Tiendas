@@ -3,18 +3,18 @@ import './productsToBuy.css'
 import { Link } from "react-router-dom"
 import addCartIcon from "../../assets/addCartIcon.svg"
 import { CartContext } from "../../context/CartContext"
-import { ProductContext } from "../../context/ProductContext"
+import { ProductsToBuyContext } from "../../context/ProductsToBuyContext"
 
 export const ProductsToBuy = () => {
-    const { products, formatearPrecio } = useContext(ProductContext)
+    const { filteredProducts, formatearPrecio } = useContext(ProductsToBuyContext)
     const { cart, addToCart } = useContext(CartContext)
 
-
+    console.log(filteredProducts)
     return (
         <div className="containerProducts">
             <h1 className="title-products">Products</h1>
             <div className="products">
-                {products?.map((product) => {
+                {filteredProducts?.map((product) => {
                     const productInCart = cart.find((item) => item.id === product.id)
                     const quantity = productInCart?.quantity || 0
 

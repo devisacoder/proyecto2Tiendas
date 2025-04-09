@@ -1,7 +1,10 @@
+import { useCategories } from '../../hooks/useCategories'
 import { Search } from '../search/search'
 import './sidebarCategories.css'
 
 export const SidebarCategories = () => {
+    const { uniqueCategories, handleClick } = useCategories()
+
     return(
         <div className="container-sidebar">
             <h2 className='title-sidebar'>Categories</h2>
@@ -9,13 +12,14 @@ export const SidebarCategories = () => {
                 <Search/>
             </div>
             <ul className="ul-sidebar">
-                <li>Shoes</li>
-                <li>Women's Clothing</li>
-                <li>Baby Clothing</li>
-                <li>Men's Clothing</li>
-                <li>Home</li>
-                <li>Baby Shoes</li>
-                <li>Men's Shoes</li>
+                {uniqueCategories.map((cat) => (
+                    <li 
+                        key={cat}
+                        onClick={() => handleClick(cat)}
+                    >
+                        {cat}
+                    </li>
+                ))}
             </ul>
         </div>
     )

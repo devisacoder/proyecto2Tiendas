@@ -10,8 +10,8 @@ export const Header = () => {
 
     return(
         <header className='container-header'>
-            <Link to='/products-to-buy-page'>Products to buy</Link>
-            <Link to='/my-products'>My Products</Link>
+            <Link className='header_fullLink' to='/products-to-buy-page'>Products to buy</Link>
+            <Link className='header_fullLink' to='/my-products'>My Products</Link>
             <div className='container-header-icons'>
                 <Users/>
                 <Link to='/cart' className='cart-link'>

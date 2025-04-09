@@ -1,11 +1,11 @@
 import { useContext } from "react"
-import { ProductContext } from "../../context/ProductContext"
+import { ProductsToBuyContext } from "../../context/ProductsToBuyContext"
 import './productCard.css'
 import { useParams } from "react-router-dom"
 
 export const ProductCard = () => {
     const { id } = useParams()
-    const { products, formatearPrecio } = useContext(ProductContext) 
+    const { products, formatearPrecio } = useContext(ProductsToBuyContext) 
 
     const filteresProduct = products.filter((product) => product.id === Number(id))
     

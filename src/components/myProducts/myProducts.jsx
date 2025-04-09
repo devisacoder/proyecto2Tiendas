@@ -2,13 +2,13 @@ import { useMyProducts } from "../../hooks/useMyProducts"
 import '../productsToBuy/productsToBuy.css'
 
 export const MyProducts = () => {
-    const { myProducts } = useMyProducts()
+    const { filteredProducts } = useMyProducts()
     
     return(
         <div className="containerProducts">
         <h1 className="title-products">My Products</h1>
         <div className="products">
-          {myProducts?.map((product) => (
+          {filteredProducts?.map((product) => (
             <div className="containerItemProduct" key={product.id}>
               <img
                 className="image-products"

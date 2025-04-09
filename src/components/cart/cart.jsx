@@ -1,10 +1,10 @@
 import { useContext } from "react"
 import "./cart.css"
 import { CartContext } from "../../context/CartContext"
-import { ProductContext } from "../../context/ProductContext"
+import { ProductsToBuyContext } from "../../context/ProductsToBuyContext"
 
 export const Cart = () => {
-    const { formatearPrecio } = useContext(ProductContext)
+    const { formatearPrecio } = useContext(ProductsToBuyContext)
     const { 
         cart, 
         incrementQuantity, 
