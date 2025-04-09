@@ -1,9 +1,15 @@
 import { useContext } from "react"
-import { ProductContext } from "../../context/ProductContext"
 import "./cart.css"
+import { CartContext } from "../../context/CartContext"
+import { ProductContext } from "../../context/ProductContext"
 
 export const Cart = () => {
-    const { cart, formatearPrecio, incrementQuantity, decrementQuantity } = useContext(ProductContext)
+    const { formatearPrecio } = useContext(ProductContext)
+    const { 
+        cart, 
+        incrementQuantity, 
+        decrementQuantity 
+    } = useContext(CartContext)
 
     const totalQuantity = cart.reduce((acc, product) => acc + product.price * product.quantity, 0)
 
