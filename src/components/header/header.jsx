@@ -3,10 +3,10 @@ import './header.css'
 import cartIcon from '../../assets/cartIcon.svg'
 import { Link } from 'react-router-dom'
 import { useContext } from 'react'
-import { ProductContext } from '../../context/ProductContext'
+import { CartContext } from '../../context/CartContext'
 
 export const Header = () => {
-    const { cartTotalQuantity } = useContext(ProductContext)
+    const { cartTotalQuantity } = useContext(CartContext)
 
     return(
         <header className='container-header'>
