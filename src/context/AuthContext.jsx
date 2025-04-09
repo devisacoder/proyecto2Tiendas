@@ -17,7 +17,7 @@ export const AuthProvider = ({ children }) => {
             try{
                 const decoded = jwtDecode(token);
                 setTenant(decoded.tenantid);
-                navigate('/home');
+                navigate('/products-to-buy-page');
             }catch(error) {
                 logout();
             }
@@ -31,7 +31,7 @@ export const AuthProvider = ({ children }) => {
         const decoded = jwtDecode(token);
         
         setTenant(decoded.tenantid);
-        navigate('/home');
+        navigate('/products-to-buy-page');
     };
 
     const logout = () => {

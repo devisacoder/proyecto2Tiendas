@@ -1,5 +1,6 @@
 import { Search } from '../search/search'
 import './sidebarCategories.css'
+
 export const SidebarCategories = () => {
     return(
         <div className="container-sidebar">
