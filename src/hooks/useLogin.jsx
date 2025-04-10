@@ -1,7 +1,10 @@
 import { useContext, useState } from "react"
 import { AuthContext } from "../context/AuthContext"
+import { useLocation } from "react-router-dom"
 
 export const useLogin = () => {
+    const [ error, setError ] = useState('')
+    const { login } = useContext(AuthContext)
     const [ formData, setFormData ] = useState({
         name: '',
         address: '',
@@ -9,8 +12,9 @@ export const useLogin = () => {
         password: ''
     })
 
-    const [ error, setError ] = useState('')
-    const { login } = useContext(AuthContext)
+
+    const location = useLocation()
+    const from = location.state?.from?.pathname || './products-to-buy-page'
 
     const handleInputChange = (e) => {
         setFormData({
@@ -22,7 +26,7 @@ export const useLogin = () => {
     const handleSubmit = async (e) => {
         e.preventDefault()
         setError('')
-         
+
         try{
             const response  = await fetch('http://localhost:3001/auth/login', {
                 method: 'POST',
@@ -36,7 +40,7 @@ export const useLogin = () => {
             }
 
             const { token } = await response.json();
-            login(token);
+            login(token, from);
         } catch(err) {
             setError(err.message)
             console.error('Login error:', err)

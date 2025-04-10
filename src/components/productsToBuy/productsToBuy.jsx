@@ -11,7 +11,7 @@ export const ProductsToBuy = () => {
 
     return (
         <div className="containerProducts">
-            <h1 className="title-products">Products</h1>
+            <h1 className="title-products">Products to buy</h1>
             <div className="products">
                 {filteredProducts?.map((product) => {
                     const productInCart = cart.find((item) => item.id === product.id)

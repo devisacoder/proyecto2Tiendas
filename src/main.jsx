@@ -4,13 +4,19 @@ import App from './App.jsx'
 import { CategoryProvider } from './context/Categories.jsx'
 import { ProductsToBuyProvider } from './context/ProductsToBuyContext.jsx'
 import { CartProvider } from './context/CartContext.jsx'
+import { AuthProvider } from './context/AuthContext.jsx'
+import { BrowserRouter } from 'react-router-dom'
 
 createRoot(document.getElementById('root')).render(
-  <CategoryProvider>
-    <ProductsToBuyProvider>
+  <BrowserRouter>
+    <AuthProvider>
       <CartProvider>
-        <App />
+        <CategoryProvider>
+          <ProductsToBuyProvider>
+            <App />
+          </ProductsToBuyProvider>
+        </CategoryProvider>
       </CartProvider>
-    </ProductsToBuyProvider>
-  </CategoryProvider>
+    </AuthProvider>
+  </BrowserRouter>
 )

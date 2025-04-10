@@ -17,7 +17,15 @@ export const AuthProvider = ({ children }) => {
             try{
                 const decoded = jwtDecode(token);
                 setTenant(decoded.tenantid);
-                navigate('/products-to-buy-page');
+
+                const currentPath = window.location.pathname;
+
+                const allowebPath =[ "/login", "/singUp", "/"]
+
+                if(allowebPath.includes(currentPath)) {
+                    navigate('/products-to-buy-page');
+                }
+                    
             }catch(error) {
                 logout();
             }
@@ -25,13 +33,13 @@ export const AuthProvider = ({ children }) => {
         setLoading(false)
     }, [])
 
-    const login = (token) => {
+    const login = (token, redirectTo = "/products-to-buy-page") => {
         sessionStorage.setItem('token', token);
 
         const decoded = jwtDecode(token);
         
         setTenant(decoded.tenantid);
-        navigate('/products-to-buy-page');
+        navigate(redirectTo);
     };
 
     const logout = () => {

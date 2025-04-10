@@ -6,6 +6,6 @@ export const ProtectedRoute = () => {
     const { isAuthenticated } = useContext(AuthContext)
 
     return(
-        isAuthenticated ? <Outlet /> : <Navigate to="/login" replace />
+        isAuthenticated ? <Outlet /> : <Navigate to="/login"  replace state={{ from: location }} />
     )
 }

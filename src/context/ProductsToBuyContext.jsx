@@ -27,18 +27,18 @@ export const ProductsToBuyProvider = ({ children }) => {
             currency: "CLP",
         }).format(precio);
     }
+
     const filteredProducts = products.filter((product) => {
-        const matchesCategory = selectedCategory?.productsToBuy 
-            ?   product.category.some(
-                    cat => cat.trim().toLowerCase() === selectedCategory.productsToBuy.toLowerCase()
-                )
+        const matchesCategory = selectedCategory?.productsToBuy
+            ? product.category.some(
+                cat => cat.trim().toLowerCase() === selectedCategory.productsToBuy.toLowerCase()
+            )
             : true;
-
-            const matchesSearch = product.name?.toLowerCase().includes(search?.toLowerCase())
     
-            return matchesCategory && matchesSearch;
-        })
-
+        const matchesSearch = product.name?.toLowerCase().includes(search?.toLowerCase());
+    
+        return matchesCategory && matchesSearch;
+    });
 
     return(
         <ProductsToBuyContext.Provider value={{

@@ -11,30 +11,24 @@ import { Layout } from './Layout.jsx';
 
 function App() {
   return (
-    <Router>
+    <Routes>
 
-      <AuthProvider>
-        <Routes>
-
-          <Route path="/" element={<Navigate to="/login" replace/>} />
-          
-          <Route path="/login" element={<PageLogin />} />
-          <Route path="/signUp" element={<SignUp />} />
-
-          <Route element={<ProtectedRoute/>}>
-            <Route element={<Layout/>}>      
-              <Route path='/products-to-buy-page' element={<ProductsToBuy/>}/>
-              <Route path='/my-products' element={<MyProducts/>}/>
-              <Route path='/product/:id' element={<ProductCardPage/>} />
-            </Route>
-            
-            <Route path='/cart' element={<CartPage/>} />
-          </Route>
-
-        </Routes>
-      </AuthProvider>
+      <Route path="/" element={<Navigate to="/login" replace/>} />
       
-    </Router> 
+      <Route path="/login" element={<PageLogin />} />
+      <Route path="/signUp" element={<SignUp />} />
+
+      <Route element={<ProtectedRoute/>}>
+        <Route element={<Layout/>}>      
+          <Route path='/products-to-buy-page' element={<ProductsToBuy/>}/>
+          <Route path='/my-products' element={<MyProducts/>}/>
+          <Route path='/product/:id' element={<ProductCardPage/>} />
+        </Route>
+        
+        <Route path='/cart' element={<CartPage/>} />
+      </Route>
+
+    </Routes>
   );
 }
 

@@ -39,16 +39,15 @@ export const useMyProducts = () => {
     
     const filteredProducts = myProducts.filter((product) => {
         const matchesCategory = selectedCategory?.myProducts
-            ?   product.category.some(
-                    cat => cat.trim().toLowerCase() === selectedCategory.myProducts.toLowerCase()
-                )
-            : true
-
-        const matchesSearch = product.name?.toLowerCase().includes(search?.toLowerCase())
+            ? product.category.some(
+                cat => cat.trim().toLowerCase() === selectedCategory.myProducts.toLowerCase()
+            )
+            : true;
     
-        return matchesCategory && matchesSearch
-    })
-
+        const matchesSearch = product.name?.toLowerCase().includes(search?.toLowerCase());
+    
+        return matchesCategory && matchesSearch;
+    });
 
 
     return { myProducts, filteredProducts }

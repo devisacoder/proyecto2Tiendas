@@ -1,23 +1,32 @@
 import { useEffect } from "react";
+import { useContext } from "react";
 import { useState } from "react";
 import { createContext } from "react";
+import { AuthContext } from "./AuthContext";
 
 export const CartContext = createContext()
 
 export const CartProvider =({ children }) => {
       const [ cart, setCart ] = useState([]) 
+      const { tenant } = useContext(AuthContext)
         
         useEffect(() => {
-            const storedCart = localStorage.getItem("cart")
+
+            if(!tenant) return
+
+            const storedCart = localStorage.getItem(`cart_${tenant}`)
     
             if(storedCart) {
                 setCart(JSON.parse(storedCart))
+            } else {
+                setCart([])
             }
-        }, [])
+        }, [tenant])
     
         useEffect(() => {
-            localStorage.setItem("cart", JSON.stringify(cart))
-        }, [cart])
+            if (!tenant) return
+            localStorage.setItem(`cart_${tenant}`, JSON.stringify(cart))
+        }, [cart, tenant])
 
         
     const addToCart = (product) => {
