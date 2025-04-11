@@ -22,9 +22,9 @@ function App() {
         <Route element={<Layout/>}>      
           <Route path='/products-to-buy-page' element={<ProductsToBuy/>}/>
           <Route path='/my-products' element={<MyProducts/>}/>
-          <Route path='/product/:id' element={<ProductCardPage/>} />
         </Route>
         
+        <Route path='/product/:id' element={<ProductCardPage/>} />
         <Route path='/cart' element={<CartPage/>} />
       </Route>
 

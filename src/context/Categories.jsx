@@ -10,7 +10,7 @@ export const CategoryProvider = ({ children }) => {
         myProducts: "",
     });
 
-    const location = useLocation();
+    const location = useLocation(); 
 
     useEffect(() => {
         const stored = sessionStorage.getItem("selectedCategory");
@@ -57,12 +57,17 @@ export const CategoryProvider = ({ children }) => {
         });
     };
 
+    const clearSelectedCategory = () => {
+        setSelectedCategory(null)
+    } 
     return (
         <CategoryContext.Provider
             value={{
                 selectedCategory,
                 setCategory,
                 isInitialized,
+                clearSelectedCategory,
+                
             }}
         >
             {children}

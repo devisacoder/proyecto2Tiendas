@@ -1,4 +1,4 @@
-const API = 'http://localhost:8080/products';
+const API = 'http://localhost:8081/products';
 
 export const getProducts = async () => {
     try {

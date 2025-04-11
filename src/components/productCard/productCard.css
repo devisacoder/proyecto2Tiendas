@@ -26,6 +26,7 @@
     gap: 2rem;
     max-width: 400px;
     width: 100%;
+    align-items: center;
 }
 
 .productCard_imageProduct {
@@ -81,3 +82,24 @@
 .productCard_buttonProduct:hover {
     background-color: #152a4a;
 }
+.productCard_buttonWrapper {
+    position: relative;
+    width: 300px;
+    display: flex;
+  }
+  
+  .productCard_quantityBadge {
+    position: absolute;
+    top: -8px;
+    right: -8px;
+    background-color: red;
+    color: white;
+    border-radius: 50%;
+    font-size: 12px;
+    width: 20px;
+    height: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  

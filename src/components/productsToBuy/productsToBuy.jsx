@@ -4,14 +4,23 @@ import { Link } from "react-router-dom"
 import addCartIcon from "../../assets/addCartIcon.svg"
 import { CartContext } from "../../context/CartContext"
 import { ProductsToBuyContext } from "../../context/ProductsToBuyContext"
+import { CategoryContext } from "../../context/Categories"
 
 export const ProductsToBuy = () => {
     const { filteredProducts, formatearPrecio } = useContext(ProductsToBuyContext)
     const { cart, addToCart } = useContext(CartContext)
+    const { selectedCategory, clearSelectedCategory } = useContext(CategoryContext) 
 
     return (
         <div className="containerProducts">
-            <h1 className="title-products">Products to buy</h1>
+            <div className="titles-container">
+                <h1 className="title-products">Products to buy</h1>
+                {selectedCategory && (
+                <button onClick={clearSelectedCategory} className="reset-button">
+                    Show all products
+                </button>
+            )}
+            </div>
             <div className="products">
                 {filteredProducts?.map((product) => {
                     const productInCart = cart.find((item) => item.id === product.id)
@@ -25,7 +34,7 @@ export const ProductsToBuy = () => {
                                     className="cart-icon"
                                     src={addCartIcon}
                                     alt="Icon to add product to cart"
-                                    />
+                                />
                                     {quantity > 0 && (
                                         <span className="product-count">{quantity}</span>
                                     )}
@@ -41,6 +50,7 @@ export const ProductsToBuy = () => {
                                         {formatearPrecio(product.price)}
                                     </span>
                                 </p>
+                                <p className="stock">My stock: <span className="quantity">{product.stock}</span></p>
                             </Link>
                         </div>
                     )

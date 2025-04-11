@@ -7,6 +7,24 @@
     gap: 2rem;
     padding: 5% 2rem 0rem 2rem; 
 }
+.titles-container{
+    display: flex;
+    justify-content: center;
+    gap: 8rem;
+    align-items: center;
+}
+.titles-container button{
+    border: 1px solid  white;
+    background-color: transparent;
+    color: antiquewhite;
+    height: 3rem;
+    cursor: pointer;
+    border-radius: 4px;
+}
+.titles-container button:hover{
+    background-color: #ffffff3d;
+    color: rgb(255, 255, 255);
+}
 .title-products{
     display: flex;
     justify-content: center;
@@ -86,4 +104,10 @@
 }
 .price{
     color: rgb(75, 255, 195);
+}
+.stock{
+    color: #c64337;
+}
+.quantit{
+    color: wheat;
 }

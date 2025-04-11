@@ -3,7 +3,7 @@ import { Search } from '../search/search'
 import './sidebarCategories.css'
 
 export const SidebarCategories = () => {
-    const { uniqueCategories, handleClick } = useCategories()
+    const { uniqueCategories, handleClick, selectedCategory  } = useCategories()
 
     return(
         <div className="container-sidebar">
@@ -11,16 +11,19 @@ export const SidebarCategories = () => {
             <div className='search-sidebar'>
                 <Search/>
             </div>
-            <ul className="ul-sidebar">
-                {uniqueCategories.map((cat) => (
-                    <li 
-                        key={cat}
-                        onClick={() => handleClick(cat)}
-                    >
-                        {cat}
-                    </li>
-                ))}
-            </ul>
+            <div className="scrollable-categories">
+                <ul className="ul-sidebar">
+                    {uniqueCategories.map((cat) => (
+                        <li 
+                            key={cat}
+                            onClick={() => handleClick(cat)}
+                            className={selectedCategory === cat ? 'active-category' : ''}
+                        >
+                            {cat}
+                        </li>
+                    ))}
+                </ul>
+            </div>
         </div>
     )
 }

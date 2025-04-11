@@ -4,6 +4,7 @@ import { ProductCard } from "../../components/productCard/productCard"
 export const ProductCardPage = () => { 
     return (
         <>
+            <Header/>
             <ProductCard/>
         </>
     )
