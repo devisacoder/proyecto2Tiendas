@@ -57,9 +57,18 @@ export const CategoryProvider = ({ children }) => {
         });
     };
 
+    const selected =
+    location.pathname === '/products-to-buy-page'
+        ? selectedCategory.productsToBuy
+        : location.pathname === '/my-products'
+        ? selectedCategory.myProducts
+        : null
+
+
     const clearSelectedCategory = () => {
         setSelectedCategory(null)
     } 
+
     return (
         <CategoryContext.Provider
             value={{
@@ -67,6 +76,7 @@ export const CategoryProvider = ({ children }) => {
                 setCategory,
                 isInitialized,
                 clearSelectedCategory,
+                selected
                 
             }}
         >

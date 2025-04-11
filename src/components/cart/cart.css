@@ -109,3 +109,14 @@
 .cart-quantity-buttons button:hover {
     background-color: #256128;
 }
+.container-cart::-webkit-scrollbar {
+    width: 0px;
+}
+
+.container-cart::-webkit-scrollbar-track {
+    background: transparent;
+}
+
+.container-cart::-webkit-scrollbar-thumb {
+    background-color: transparent;
+}
