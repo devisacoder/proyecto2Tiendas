@@ -66,7 +66,14 @@ export const CategoryProvider = ({ children }) => {
 
 
     const clearSelectedCategory = () => {
-        setSelectedCategory(null)
+        setSelectedCategory({
+            productsToBuy: "",
+            myProducts: "",
+        });
+        sessionStorage.setItem("selectedCategory", JSON.stringify({
+            productsToBuy: "",
+            myProducts: "",
+        }));    
     } 
 
     return (

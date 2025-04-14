@@ -36,3 +36,45 @@
 .btn-checkout:hover {
     background-color: #668f82;
 }
+
+@media (max-width: 768px) {
+    .cart-summary {
+      position: static;
+      min-width: auto; 
+      margin-top: 1rem;
+    }
+  
+    .cart-summary h2 {
+      font-size: 1.3rem;
+    }
+  
+    .cart-summary p {
+      font-size: 1rem;
+      padding-bottom: 0.8rem;
+    }
+  
+    .btn-checkout {
+      padding: 0.7rem;
+      font-size: 1rem;
+    }
+  }
+  
+  @media (max-width: 480px) {
+    .cart-summary {
+      padding: 1rem;
+    }
+  
+    .cart-summary h2 {
+      font-size: 1.2rem;
+    }
+  
+    .cart-summary p {
+      font-size: 0.95rem;
+    }
+  
+    .btn-checkout {
+      padding: 0.6rem;
+      font-size: 0.9rem;
+    }
+  }
+  

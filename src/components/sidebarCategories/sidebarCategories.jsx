@@ -7,6 +7,7 @@ import { CategoryContext } from '../../context/Categories'
 export const SidebarCategories = () => {
     const { uniqueCategories, handleClick  } = useCategories()
     const { selected } = useContext(CategoryContext)
+    
     return(
         <div className="container-sidebar">
             <h2 className='title-sidebar'>Categories</h2>

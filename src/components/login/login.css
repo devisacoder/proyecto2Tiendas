@@ -60,3 +60,55 @@ input::placeholder{
     font-size: 18px;
     cursor: pointer;
 }
+
+/* Cambios para pantallas de hasta 768px */
+@media (max-width: 768px) {
+    .form-login {
+      /* Hacemos que el ancho se adapte al 90% del ancho de la pantalla en vez de un valor fijo */
+      width: 90%;
+      /* Eliminamos altura fija para que se ajuste según el contenido */
+      height: auto;
+      padding: 1.5rem;
+      gap: 1rem;
+    }
+    
+    .form-login input {
+      /* Ancho completo menos márgenes, para que se adapten al contenedor */
+      width: 100%;
+      height: 2.2rem; /* Le damos un poquito más de altura si se necesita */
+    }
+    
+    .form-login button {
+      width: 100%;
+      height: 2.5rem;
+      font-size: 1rem;
+    }
+    
+    .link-sign-up {
+      font-size: 1rem;
+    }
+  }
+  
+  /* Cambios para pantallas de hasta 480px */
+  @media (max-width: 480px) {
+    .form-login {
+      /* Más padding para que no quede tan apegado a los bordes */
+      padding: 1rem;
+      gap: 0.8rem;
+    }
+    
+    .form-login input {
+      height: 2rem;
+      font-size: 0.9rem;
+    }
+    
+    .form-login button {
+      height: 2.2rem;
+      font-size: 0.9rem;
+    }
+    
+    .link-sign-up {
+      font-size: 0.9rem;
+    }
+  }
+  

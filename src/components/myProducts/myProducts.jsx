@@ -2,6 +2,7 @@ import { useContext } from "react"
 import { useMyProducts } from "../../hooks/useMyProducts"
 import '../productsToBuy/productsToBuy.css'
 import { CategoryContext } from "../../context/Categories"
+import { Link } from "react-router-dom"
 
 export const MyProducts = () => {
     const { filteredProducts } = useMyProducts()
@@ -19,7 +20,11 @@ export const MyProducts = () => {
           </div>
         <div className="products">
           {filteredProducts?.map((product) => (
-            <div className="containerItemProduct" key={product.id}>
+            <Link
+              className="containerItemProduct" 
+              key={product.id}
+              to={`/store-product/${product.id}`}
+            >
               <img
                 className="image-products"
                 src={product.images[0]}
@@ -30,8 +35,7 @@ export const MyProducts = () => {
               <p className="price-products">
                 Price: <span className="price">{product.price}</span>
               </p>
-              <p className="stock">My stock: {product.quantity}</p>
-            </div>
+            </Link>
           ))}
         </div>
       </div>
