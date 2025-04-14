@@ -1,56 +1,69 @@
 .container-sidebar {
     width: 20rem;
     height: 100vh;
-    padding-top: 5%;
+    padding-top: 5rem;
     background-color: #1a426d;
     color: white;
     display: flex;
     flex-direction: column;
     gap: 2rem;
+    transition: transform 0.3s ease;
 }
-.title-sidebar{
+
+.sidebar-content {
+    display: block;
+}
+
+.title-sidebar {
+    display: flex;
+    justify-content: center;
+    cursor: pointer;
+    font-size: 1.5rem;
+}
+
+.search-sidebar {
     display: flex;
     justify-content: center;
 }
+
 .scrollable-categories {
     flex: 1;
     overflow-y: auto;
     padding-right: 0.5rem;
 }
-.search-sidebar{
-    display: flex;
-    justify-content: center;
-}
-.ul-sidebar{
+
+.ul-sidebar {
     display: flex;
     flex-direction: column;
     list-style: none;
     gap: 0.1rem;
     margin: 0;
     padding: 0;
-
 }
+
 .ul-sidebar li {
     margin: 0;
     height: 3rem;
     display: flex;
     width: 100%;
     align-items: center;
-    padding-left: 16%; 
+    padding-left: 16%;
     box-sizing: border-box;
     cursor: pointer;
 }
 
-.ul-sidebar li:hover{
+.ul-sidebar li:hover {
     background-color: #247fac;
     color: rgb(255, 255, 255);
     transition: 0.3s;
 }
+
 .active-category {
     background-color: #247fac;
     color: white;
     font-weight: bold;
 }
+
 .scrollable-categories::-webkit-scrollbar {
     width: 12px;
 }
@@ -65,3 +78,55 @@
     border: 2px solid transparent;
     background-clip: content-box;
 }
+
+@media (max-width: 900px) {
+    .container-sidebar {
+        position: fixed;
+        top: 0;
+        left: 0;
+        height: auto;
+        z-index: 1000;
+        transition: all 0.3s ease;
+        background-color: #1a426d;
+        color: white;
+        margin-top: 10rem;
+        padding: 0.5rem 1rem;
+        width: fit-content; 
+    }
+
+    .container-sidebar.open {
+        width: 100%;
+        height: 100vh;
+        flex-direction: column;
+        gap: 2rem;
+    }
+
+    .container-sidebar:not(.open) .sidebar-content {
+        display: none;
+    }
+
+    .title-sidebar {
+        font-size: 1.5rem;
+        cursor: pointer;
+        text-align: center;
+        width: 100%;
+    }
+}
+
+/* @media (max-width: 400px) {
+    .title-sidebar {
+        font-size: 1rem;
+        position: fixed;
+        top: 0;
+        left: 50%;
+        transform: translateX(-50%);
+        z-index: 1100;
+        background-color: #1a426d;
+        width: 100%;
+        padding: 10px 0;
+        text-align: center;
+    }
+    .container-sidebar.open .sidebar-content {
+        margin-top: 50px;
+    }
+} */

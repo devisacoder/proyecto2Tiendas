@@ -23,6 +23,7 @@
 }
 .container-header-icons{
     display: flex;
+    align-items: center;
     gap: 4rem;
 }
 .cartIcon{
@@ -56,27 +57,23 @@
       font-size: 1rem;
       margin: 0.5rem;
     }
-  
-    .container-header-icons {
-      gap: 1.5rem;
-      margin-top: 0.5rem;
+    .container-header-icons{
+      gap: 1rem;
     }
-  
     .cartIcon {
       width: 2.5rem;
     }
   }
   
   @media (max-width: 480px) {
+    .container-header-icons{
+      gap: 0.2rem
+    };
     .header_fullLink {
       font-size: 1rem;
       margin: 0.3rem;
     }
-  
-    .container-header-icons {
-      gap: 1rem;
-      margin-top: 0.3rem;
-    }
+
   
     .cartIcon {
       width: 2rem;
