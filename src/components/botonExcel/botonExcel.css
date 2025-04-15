@@ -1,0 +1,8 @@
+.botonExcel{
+    border: 1px solid white;
+    background-color: transparent;
+    color: antiquewhite;
+    height: 2rem;
+    cursor: pointer;
+    border-radius: 4px;
+}

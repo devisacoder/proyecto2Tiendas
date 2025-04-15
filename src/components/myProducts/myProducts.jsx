@@ -21,7 +21,7 @@ export const MyProducts = () => {
         <div className="products">
           {filteredProducts?.map((product) => (
             <Link
-              className="containerItemProduct" 
+              className="containerItemProduct fullLink" 
               key={product.id}
               to={`/store-product/${product.id}`}
             >

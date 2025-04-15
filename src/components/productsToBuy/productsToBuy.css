@@ -1,9 +1,7 @@
-/* Asegura que el padding no cause desbordes */
 *, *::before, *::after {
     box-sizing: border-box;
   }
   
-  /* CONTENEDOR GENERAL */
   .containerProducts {
       display: flex;
       justify-content: center;
@@ -16,7 +14,6 @@
       max-width: 100%;
   }
   
-  /* TÍTULOS */
   .titles-container {
       display: flex;
       justify-content: center;
@@ -26,7 +23,7 @@
       text-align: center;
   }
   
-  .titles-container button {
+  .reset-button {
       border: 1px solid white;
       background-color: transparent;
       color: antiquewhite;
@@ -49,7 +46,6 @@
       margin-bottom: 1rem;
   }
   
-  /* PRODUCTOS */
   .products {
       display: flex; 
       flex-wrap: wrap;
@@ -93,7 +89,6 @@
       object-fit: cover;
   }
   
-  /* INFO PRODUCTO */
   .name-products {
       font-size: 22px;
       margin-top: 0.5rem;
@@ -115,7 +110,6 @@
       color: wheat;
   }
   
-  /* CARRITO */
   .cart-icon {
       width: 2.5rem;
       padding: 5px;
@@ -143,7 +137,6 @@
       font-weight: bold;
   }
   
-  /* RESPONSIVE: MOBILE */
   @media (max-width: 768px) {
     .title-products {
       font-size: 24px;
@@ -173,9 +166,9 @@
       font-size: 12px;
     }
   
-    .titles-container button {
+    .reset-button {
       font-size: 14px;
-      height: 2.5rem;
+      height: 2rem;
     }
   }
   

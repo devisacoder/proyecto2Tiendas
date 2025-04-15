@@ -5,6 +5,7 @@ import addCartIcon from "../../assets/addCartIcon.svg"
 import { CartContext } from "../../context/CartContext"
 import { ProductsToBuyContext } from "../../context/ProductsToBuyContext"
 import { CategoryContext } from "../../context/Categories"
+import { BotonExcel } from "../botonExcel/botonExcel"
 
 export const ProductsToBuy = () => {
     const { filteredProducts, formatearPrecio } = useContext(ProductsToBuyContext)
@@ -14,6 +15,7 @@ export const ProductsToBuy = () => {
     return (
         <div className="containerProducts">
             <div className="titles-container">
+                <BotonExcel/>
                 <h1 className="title-products">Products to buy</h1>
                 {selectedCategory && (
                 <button onClick={clearSelectedCategory} className="reset-button">
