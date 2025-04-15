@@ -1,8 +1,8 @@
 import { useContext } from "react"
 import { useMyProducts } from "../../hooks/useMyProducts"
 import '../productsToBuy/productsToBuy.css'
-import { CategoryContext } from "../../context/Categories"
 import { Link } from "react-router-dom"
+import { CategoryContext } from "../../context/CategoriesContext"
 
 export const MyProducts = () => {
     const { filteredProducts } = useMyProducts()

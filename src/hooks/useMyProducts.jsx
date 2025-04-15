@@ -2,7 +2,7 @@ import { useContext } from "react"
 import { AuthContext } from "../context/AuthContext"
 import { useEffect } from "react"
 import { useState } from "react"
-import { CategoryContext } from "../context/Categories"
+import { CategoryContext } from "../context/CategoriesContext"
 import { ProductsToBuyContext } from "../context/ProductsToBuyContext"
 
 export const useMyProducts = () => {

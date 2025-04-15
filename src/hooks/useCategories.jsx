@@ -1,6 +1,6 @@
 import { useContext } from "react"
 import { useLocation } from "react-router-dom"
-import { CategoryContext } from "../context/Categories"
+import { CategoryContext } from "../context/CategoriesContext"
 import { ProductsToBuyContext } from "../context/ProductsToBuyContext"
 import { useMyProducts } from "./useMyProducts"
 

@@ -2,7 +2,7 @@ import { useContext, useState } from 'react'
 import { useCategories } from '../../hooks/useCategories'
 import { Search } from '../search/search'
 import './sidebarCategories.css'
-import { CategoryContext } from '../../context/Categories'
+import { CategoryContext } from '../../context/CategoriesContext'
 
 export const SidebarCategories = () => {
   const [isSidebarOpen, setIsSidebarOpen] = useState(false)
@@ -19,7 +19,6 @@ export const SidebarCategories = () => {
         Categories
       </h2>
       
-      {/* Usamos un contenedor extra para el contenido del sidebar */}
       <div className="sidebar-content">
         <div className="search-sidebar">
           <Search />
@@ -29,7 +28,11 @@ export const SidebarCategories = () => {
             {uniqueCategories.map((cat) => (
               <li 
                 key={cat}
-                onClick={() => handleClick(cat)}
+                onClick={() => {
+                    handleClick(cat)
+                    setIsSidebarOpen(false)
+                  }
+                }
                 className={selected === cat ? 'active-category' : ''}
               >
                 {cat}

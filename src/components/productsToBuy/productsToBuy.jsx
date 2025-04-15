@@ -4,7 +4,7 @@ import { Link } from "react-router-dom"
 import addCartIcon from "../../assets/addCartIcon.svg"
 import { CartContext } from "../../context/CartContext"
 import { ProductsToBuyContext } from "../../context/ProductsToBuyContext"
-import { CategoryContext } from "../../context/Categories"
+import { CategoryContext } from "../../context/CategoriesContext"
 import { BotonExcel } from "../excelButton/excelButton"
 
 export const ProductsToBuy = () => {

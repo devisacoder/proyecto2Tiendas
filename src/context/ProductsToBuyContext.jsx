@@ -1,7 +1,7 @@
 import { createContext, useEffect, useState } from "react"
 import { getProducts } from "../service/products"
 import { useContext } from "react"
-import { CategoryContext } from "./Categories"
+import { CategoryContext } from "./CategoriesContext"
 
 export const ProductsToBuyContext = createContext()
 
