@@ -1,5 +1,5 @@
-import { useExcel } from "../../hooks/useExcel"
-import "./botonExcel.css"
+import { useExcel } from "../../hooks/useExcelButton"
+import "./excelButton.css"
 
 export const BotonExcel = () => {
     const { handleExcel } = useExcel()

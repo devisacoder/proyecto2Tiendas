@@ -10,7 +10,8 @@ export const useExcel = () => {
             });
 
             if(!response.ok){
-                throw new Error("Error al generar el archivo Excel");
+                alert("Error generating Excel file, try it later");
+                throw new Error("Error generating Excel file");
             }
 
             const blob = await response.blob();
@@ -22,7 +23,8 @@ export const useExcel = () => {
             a.remove();
             window.URL.revokeObjectURL(url); 
         } catch (error) {
-            console.error("Error al descargar el archivo Excel:", error);
+            alert("Error downloading Excel file, try it later");
+            console.error("Error downloading Excel file:", error);
         }
     
     }

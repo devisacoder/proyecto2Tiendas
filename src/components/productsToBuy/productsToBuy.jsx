@@ -5,7 +5,7 @@ import addCartIcon from "../../assets/addCartIcon.svg"
 import { CartContext } from "../../context/CartContext"
 import { ProductsToBuyContext } from "../../context/ProductsToBuyContext"
 import { CategoryContext } from "../../context/Categories"
-import { BotonExcel } from "../botonExcel/botonExcel"
+import { BotonExcel } from "../excelButton/excelButton"
 
 export const ProductsToBuy = () => {
     const { filteredProducts, formatearPrecio } = useContext(ProductsToBuyContext)
